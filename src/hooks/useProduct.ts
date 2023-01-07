@@ -26,15 +26,15 @@ export const useProduct = ({ onChange, product, value = 0, initialValues }: useP
    const reset = () => {
       setCounter(initialValues?.count || value);
    }
-
-   useEffect(() => {
-      isMounted.current = true
-   }, [])
-
+   
    useEffect(() => {
       if (!isMounted.current) return;
       setCounter(initialValues?.count || value);
    }, [value])
+
+   useEffect(() => {
+      isMounted.current = true
+   }, [])
 
    return {
       counter,
